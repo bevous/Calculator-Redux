@@ -1,0 +1,10 @@
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\bin\Debug\WindowsApplication.exe.config
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\bin\Debug\WindowsApplication.exe
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\bin\Debug\WindowsApplication.pdb
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\calculator redux.csprojAssemblyReference.cache
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\calculator.CalculatorForm.resources
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\calculator_redux.calculator.Properties.Resources.resources
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\calculator redux.csproj.GenerateResource.cache
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\calculator redux.csproj.CoreCompileInputs.cache
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\WindowsApplication.exe
+C:\Users\nomad\Source\Repos\Calculator-Redux\calculator-master\calculator-master\calculator\obj\x86\Debug\WindowsApplication.pdb

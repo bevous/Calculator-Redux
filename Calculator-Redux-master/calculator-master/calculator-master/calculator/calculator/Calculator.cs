@@ -109,6 +109,11 @@
         }
 
         /// <summary>
+        /// Gets or sets the saved value.
+        /// </summary>
+        private double SavedValue { get; set; }
+
+        /// <summary>
         /// Gets or sets the current value.
         /// </summary>
         public double CurrentValue { get; set; }
@@ -241,7 +246,7 @@
         /// </summary>
         public void MemoryStore(double value)
         {
-
+            this.SavedValue = value;
         }
 
         /// <summary>
@@ -249,7 +254,7 @@
         /// </summary>
         public void MemoryClear()
         {
-
+            this.SavedValue = 0.0;
         }
 
         /// <summary>
@@ -258,9 +263,10 @@
         /// <returns>
         /// The <see cref="double"/>.
         /// </returns>
-        public double MemoryRecall()
+        public void MemoryRecall()
         {
-
+            this.Clear();
+            this.CurrentValue = this.SavedValue;
         }
 
         /// <summary>
@@ -268,7 +274,7 @@
         /// </summary>
         public void MemoryAdd(double value)
         {
-
+            this.SavedValue += this.CurrentValue;
         }
     }
 }

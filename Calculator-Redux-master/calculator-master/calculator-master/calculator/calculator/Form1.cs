@@ -548,9 +548,75 @@ namespace calculator
             this.ResultTextBox.Clear();
         }
 
+
+
         private void CalculatorForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// clears the value stored in memory.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void McButton_Click(object sender, EventArgs e)
+        {
+            this.MyCalculator.MemoryClear();
+            this.MemoryPlusButton.Hide();
+            this.MrButton.Hide();
+            this.McButton.Hide();
+        }
+
+        /// <summary>
+        /// recalls the stored value. 
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void MrButton_Click(object sender, EventArgs e)
+        {
+            this.MyCalculator.MemoryRecall();
+            this.OperationTextBox.Text = this.MyCalculator.CurrentValue.ToString();
+            this.ResultTextBox.Clear();
+        }
+
+        /// <summary>
+        /// saves the calculators current value for later use.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void MsButton_Click(object sender, EventArgs e)
+        {
+            this.MyCalculator.MemoryStore(this.MyCalculator.CurrentValue);
+            this.MemoryPlusButton.Show();
+            this.MrButton.Show();
+            this.McButton.Show();
+        }
+
+        /// <summary>
+        /// The memory plus button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void MemoryPlusButton_Click(object sender, EventArgs e)
+        {
+            this.MyCalculator.MemoryAdd(this.MyCalculator.CurrentValue);
         }
     }
 }
