@@ -51,25 +51,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="calculator\Calculator.cs" />
-    <Compile Include="calculator\Form1.cs">
+    <Compile Include="calculator\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="calculator\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="calculator\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="calculator\Program.cs" />
     <Compile Include="calculator\Properties\AssemblyInfo.cs" />
     <Compile Include="calculator\Properties\Resources.Designer.cs" />
     <Compile Include="calculator\Properties\Settings.Designer.cs" />
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoryCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="calculator\calculator.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="calculator\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="calculator\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="calculator\Properties\Resources.resx" />
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="calculator\bin\Debug\" />

@@ -56,6 +56,7 @@
             this.MsButton = new System.Windows.Forms.Button();
             this.MemoryPlusButton = new System.Windows.Forms.Button();
             this.MemoryRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.HistoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ResultTextBox
@@ -361,11 +362,22 @@
             this.MemoryRichTextBox.TabIndex = 27;
             this.MemoryRichTextBox.Text = "";
             // 
+            // HistoryButton
+            // 
+            this.HistoryButton.Location = new System.Drawing.Point(207, 70);
+            this.HistoryButton.Name = "HistoryButton";
+            this.HistoryButton.Size = new System.Drawing.Size(75, 32);
+            this.HistoryButton.TabIndex = 28;
+            this.HistoryButton.Text = "History";
+            this.HistoryButton.UseVisualStyleBackColor = true;
+            this.HistoryButton.Click += new System.EventHandler(this.HistoryButton_Click);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 340);
+            this.Controls.Add(this.HistoryButton);
             this.Controls.Add(this.MemoryRichTextBox);
             this.Controls.Add(this.MemoryPlusButton);
             this.Controls.Add(this.MsButton);
@@ -397,7 +409,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CalculatorForm";
             this.Text = "calculator";
-            this.Load += new System.EventHandler(this.CalculatorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,6 +444,7 @@
         private System.Windows.Forms.Button MsButton;
         private System.Windows.Forms.Button MemoryPlusButton;
         private System.Windows.Forms.RichTextBox MemoryRichTextBox;
+        private System.Windows.Forms.Button HistoryButton;
     }
 }
 

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace calculator
@@ -17,12 +11,21 @@ namespace calculator
 
     using calculator.Properties;
 
+    using calculator_redux;
+
     public partial class CalculatorForm : Form
     {
         /// <summary>
         /// The my calculator.
         /// </summary>
         private Calculator MyCalculator = new Calculator();
+
+        private MemoryCalculator MyMemory=new MemoryCalculator();
+
+        /// <summary>
+        /// The history.
+        /// </summary>
+        private string History;
 
         #region Operators
         /// <summary>
@@ -265,6 +268,7 @@ namespace calculator
                 if (this.OperationTextBox.Text != string.Empty)
                 {
                     double.TryParse(this.ResultTextBox.Text, out var OperandTwo);
+                    this.OperationTextBox.Text += OperandTwo.ToString() + Environment.NewLine;
                     this.MyCalculator.OperandTwo = OperandTwo;
                     this.lastNumderUsed = OperandTwo;
                     this.lastOperator = this.MyCalculator.Op;
@@ -288,6 +292,7 @@ namespace calculator
             }
             
             this.MyCalculator.Process();
+            this.History += this.OperationTextBox.Text;
             this.OperationTextBox.Clear();
             this.ResultTextBox.Text = this.MyCalculator.CurrentValue.ToString();
             this.MyCalculator.OperandTwo = 0.0;
@@ -548,13 +553,6 @@ namespace calculator
             this.ResultTextBox.Clear();
         }
 
-
-
-        private void CalculatorForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// clears the value stored in memory.
         /// </summary>
@@ -566,7 +564,7 @@ namespace calculator
         /// </param>
         private void McButton_Click(object sender, EventArgs e)
         {
-            this.MyCalculator.MemoryClear();
+            this.MyMemory.MemoryClear();
             this.MemoryPlusButton.Hide();
             this.MrButton.Hide();
             this.McButton.Hide();
@@ -583,7 +581,8 @@ namespace calculator
         /// </param>
         private void MrButton_Click(object sender, EventArgs e)
         {
-            this.MyCalculator.MemoryRecall();
+            this.MyCalculator.Clear();
+            this.MyCalculator.CurrentValue = this.MyMemory.MemoryRecall();
             this.OperationTextBox.Text = this.MyCalculator.CurrentValue.ToString();
             this.ResultTextBox.Clear();
         }
@@ -599,7 +598,7 @@ namespace calculator
         /// </param>
         private void MsButton_Click(object sender, EventArgs e)
         {
-            this.MyCalculator.MemoryStore(this.MyCalculator.CurrentValue);
+            this.MyMemory.MemoryStore(this.MyCalculator.CurrentValue);
             this.MemoryPlusButton.Show();
             this.MrButton.Show();
             this.McButton.Show();
@@ -616,7 +615,26 @@ namespace calculator
         /// </param>
         private void MemoryPlusButton_Click(object sender, EventArgs e)
         {
-            this.MyCalculator.MemoryAdd(this.MyCalculator.CurrentValue);
+            this.MyMemory.MemoryAdd(this.MyCalculator.CurrentValue);
+        }
+
+        /// <summary>
+        /// The history button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            var HistoryForm = new HistoryForm(this.History);
+            HistoryForm.ShowDialog();
+            if (HistoryForm.DialogResult == DialogResult.Yes)
+            {
+                this.History = string.Empty;
+            } // history should remain intact DoNothing();
         }
     }
 }
